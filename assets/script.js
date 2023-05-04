@@ -44,21 +44,18 @@ function generatePassword() {
 
   var lowerCaseConfirm = confirm("Do you want to use lower case letters?");
   {
-    pre = pre.concat(lowerCase);
+    pre = pre.concat(lowercaseArr);
   }
   var upperCaseConfirm = confirm("Do you want to use upper case letters?");
   {
-    pre = pre.concat(upperCase);
+    pre = pre.concat(uppercaseArr);
   }
   var numbersConfirm = confirm("Do you want to use numbers");
   {
-    pre = pre.concat(numbers);
+    pre = pre.concat(numbersArr);
   }
-  var specialCharactersConfirm = confirm(
-    "Do you want to use special characters?"
-  );
-  {
-    pre = pre.concat(specialCharacters);
+  var specialCharactersConfirm = confirm("Do you want to use special characters?");{
+    pre = pre.concat(specialCharactersArr);
   }
 
   if (pre.length === 0) {
