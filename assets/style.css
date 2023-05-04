@@ -1,3 +1,10 @@
+:root {
+    --dark-purple: #371a38d1;
+    --black: #000000;
+    --dark-teal: #1bc9cf;
+    --pink: #ef44b3;
+    --green: #1bcf4b;
+}
 *,
 *::before,
 *::after {
@@ -10,11 +17,11 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: var(--black);
 }
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
 }
 
 .wrapper {
@@ -27,15 +34,15 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: var(--pink);
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--dark-purple);
   border-radius: 5px;
   border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
+  box-shadow: var(--green) 0px 2px 8px 0px;
+  color: var(--dark-teal);
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
@@ -46,7 +53,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: var(--pink);
   height: 2px;
 }
 
@@ -62,7 +69,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: var(--pink);
   height: 2px;
 }
 
@@ -74,11 +81,11 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: var(--green);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
-  color: hsl(0, 0%, 100%);
+  color: var(--black);
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
@@ -116,6 +123,8 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+  background-color: var(--black);
+  color: var(--green);
 }
 
 @media (max-width: 690px) {
