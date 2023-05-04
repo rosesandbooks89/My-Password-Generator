@@ -1,31 +1,18 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var lowerCase = "abcdefghjiklmnopqrstuvwxyz";
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numbers = "1234567890";
-var specialCharacters = "!@#$%^&*()_+";
 
 //generate passsword (funtion declaration)
 function generatePassword() {
   console.log("You clicked the button!");
 
   //  b. upperCase, lowerCase, numbers, & special characters
-
+  var lowerCase = "abcdefghjiklmnopqrstuvwxyz";
+  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numbers = "1234567890";
+  var specialCharacters = "!@#$%^&*()_+";
+  //variable for the loop
   var pre = [];
   var post = "";
-
-  // //splits variables into individuals
-  // var lowercaseArr = lowerCase.split("");
-  // console.log(lowercaseArr);
-
-  // var uppercaseArr = upperCase.split("");
-  // console.log(uppercaseArr);
-
-  // var numbersArr = numbers.split("");
-  // console.log(numbersArr);
-
-  // var specialCharactersArr = specialCharacters.split("");
-  // console.log(specialCharactersArr);
 
   //1.prompt user for pass word criteria  a. password length 8-128 characters get prompt to popup
   var length = parseInt(
@@ -54,9 +41,10 @@ function generatePassword() {
   if (numbersConfirm === true) {
     pre += numbers;
   }
-  var specialCharactersConfirm = confirm("Do you want to use special characters?");
-    if (specialCharactersConfirm === true) {
-      pre += specialCharacters;
+  var specialCharactersConfirm = confirm("Do you want to use special characters?"
+  );
+  if (specialCharactersConfirm === true) {
+    pre += specialCharacters;
   }
 
   if (
@@ -64,14 +52,9 @@ function generatePassword() {
     upperCaseConfirm === false &&
     numbersConfirm === false &&
     specialCharactersConfirm === false
-){
+  ) {
     alert("you have to pic at least one!");
     return "Try me again";
-
-  // if (pre.length === 0) {
-  //   alert("You have to pick at least one!");
-  //   return "Try me again";
-
   }
   //3. generate password based on criteria
   // create for loop pass a letter at random
@@ -79,15 +62,11 @@ function generatePassword() {
     for (let i = 0; i < length; i++) {
       console.log(i);
       var rando = Math.floor(Math.random() * pre.length);
-      console.log(pre)
+      console.log(pre);
       post += pre[rando];
-      console.log(post)
+      console.log(post);
     }
   }
-
-  // alert("You have to pick at least one!");
-  //     return "Try me again";
-
   return post;
 }
 
