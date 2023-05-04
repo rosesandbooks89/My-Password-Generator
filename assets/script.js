@@ -14,18 +14,18 @@ function generatePassword() {
   var pre = [];
   var post = "";
 
-  //splits variables into individuals
-  var lowercaseArr = lowerCase.split("");
-  console.log(lowercaseArr);
+  // //splits variables into individuals
+  // var lowercaseArr = lowerCase.split("");
+  // console.log(lowercaseArr);
 
-  var uppercaseArr = upperCase.split("");
-  console.log(uppercaseArr);
+  // var uppercaseArr = upperCase.split("");
+  // console.log(uppercaseArr);
 
-  var numbersArr = numbers.split("");
-  console.log(numbersArr);
+  // var numbersArr = numbers.split("");
+  // console.log(numbersArr);
 
-  var specialCharactersArr = specialCharacters.split("");
-  console.log(specialCharactersArr);
+  // var specialCharactersArr = specialCharacters.split("");
+  // console.log(specialCharactersArr);
 
   //1.prompt user for pass word criteria  a. password length 8-128 characters get prompt to popup
   var length = parseInt(
@@ -35,7 +35,7 @@ function generatePassword() {
   );
 
   if (length < 8 || length > 128 || isNaN(length)) {
-    alert("enter a number 8 thru 128");
+    alert("Enter a number 8 thru 128");
     return null;
   }
   //2. validate the input; at least one character type selected
@@ -43,24 +43,35 @@ function generatePassword() {
   // create variable for all confirms
 
   var lowerCaseConfirm = confirm("Do you want to use lower case letters?");
-  {
-    pre = pre.concat(lowercaseArr);
+  if (lowerCaseConfirm === true) {
+    pre += lowerCase;
   }
   var upperCaseConfirm = confirm("Do you want to use upper case letters?");
-  {
-    pre = pre.concat(uppercaseArr);
+  if (upperCaseConfirm === true) {
+    pre += upperCase;
   }
   var numbersConfirm = confirm("Do you want to use numbers");
-  {
-    pre = pre.concat(numbersArr);
+  if (numbersConfirm === true) {
+    pre += numbers;
   }
-  var specialCharactersConfirm = confirm("Do you want to use special characters?");{
-    pre = pre.concat(specialCharactersArr);
+  var specialCharactersConfirm = confirm("Do you want to use special characters?");
+    if (specialCharactersConfirm === true) {
+      pre += specialCharacters;
   }
 
-  if (pre.length === 0) {
-    alert("You have to pick at least one!");
+  if (
+    lowerCaseConfirm === false &&
+    upperCaseConfirm === false &&
+    numbersConfirm === false &&
+    specialCharactersConfirm === false
+){
+    alert("you have to pic at least one!");
     return "Try me again";
+
+  // if (pre.length === 0) {
+  //   alert("You have to pick at least one!");
+  //   return "Try me again";
+
   }
   //3. generate password based on criteria
   // create for loop pass a letter at random
@@ -68,14 +79,16 @@ function generatePassword() {
     for (let i = 0; i < length; i++) {
       console.log(i);
       var rando = Math.floor(Math.random() * pre.length);
-      password += pre[rando];
+      console.log(pre)
+      post += pre[rando];
+      console.log(post)
     }
   }
 
   // alert("You have to pick at least one!");
   //     return "Try me again";
 
-  return password;
+  return post;
 }
 
 //4. display the generated password on the page
