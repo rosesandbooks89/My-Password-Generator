@@ -25,6 +25,8 @@ This weeks assignment proved to be very difficult for me but i made it. The unde
 
 ## Link to Deployed Application
 
+https://rosesandbooks89.github.io/My-Password-Generator/
+
 ## Screenshots
 ![alt text](./assets/images/img1.png)
 ![alt text](./assets/images/img2.png)
